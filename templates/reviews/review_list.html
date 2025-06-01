@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Fikr-mulohazalar</h2>
+<ul>
+  {% for review in reviews %}
+    <li>{{ review.user.username }}: "{{ review.text }}"</li>
+  {% empty %}
+    <li>Hali fikr-mulohaza mavjud emas.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

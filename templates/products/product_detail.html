@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="card-title text-primary mb-3">🛍 {{ product.name }}</h2>
+    <h4 class="text-muted mb-3">Narxi: ${{ product.price }}</h4>
+    <p class="card-text">{{ product.description }}</p>
+    <a href="{% url 'cart:add_to_cart' product.id %}" class="btn btn-primary mt-3">
+      ➕ Savatga qo'shish
+    </a>
+  </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}  
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Asosiy Sahifa</h1>
+    <p>Bu sizning kiyim-kechak do‘koningizning bosh sahifasidir.</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'img/pidjak.jpg' %}" class="card-img-top" alt="Mahsulot 1">
+                <div class="card-body">
+                    <h5 class="card-title">Пиджак TERRA PRO</h5>
+                    <p class="card-text">
+                        Пиджак от бренда TerraPro — это стильный акцент для вашего гардероба. Короткая длина и отложной ворот придают образу современность, а качественный полиэстер обеспечивает комфорт на весь день. Прекрасный выбор для создания уникального стиля! Артикул:</p>
+                    <a href="{% url 'products:product_list' %}" class="btn btn-primary">Ko'rish</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'img/optimize.webp' %}" class="card-img-top" alt="Mahsulot 2">
+                <div class="card-body">
+                    <h5 class="card-title">Футболка Redfort pike</h5>
+                    <p class="card-text">
+                        Мужская футболка с коротким рукавом: стиль и комфорт
+                        Мужская футболка с коротким рукавом – стильный и удобный выбор для повседневной носки. Изготовлена из плотной ткани, что обеспечивает отличное качество.</p>
+                    <a href="{% url 'products:product_list' %}" class="btn btn-primary">Ko'rish</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="{% static 'img/bryuki.jpg' %}" class="card-img-top" alt="Mahsulot 2">
+                <div class="card-body">
+                    <h5 class="card-title">Брюки классические TERRA PRO</h5>
+                    <p class="card-text">Брюки от бренда TerraPro созданы для современных людей, ценящих стиль и комфорт. Выполненные из высококачественного нейлона, они идеально подходят для любого случая благодаря </p>
+                    <a href="{% url 'products:product_list' %}" class="btn btn-primary">Ko'rish</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

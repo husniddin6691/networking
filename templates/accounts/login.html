@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background-color: #fafafa;">
+    <h2 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">Welcome Back!</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 25px;">Please log in to continue</p>
+    
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        
+        <div style="margin-bottom: 15px;">
+            {{ form.username.label_tag }}<br>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div style="color: red; font-size: 0.9em;">{{ form.username.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            {{ form.password.label_tag }}<br>
+            {{ form.password }}
+            {% if form.password.errors %}
+                <div style="color: red; font-size: 0.9em;">{{ form.password.errors }}</div>
+            {% endif %}
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;">
+            Log In
+        </button>
+    </form>
+
+    <p style="text-align: center; margin-top: 15px; font-size: 0.9em; color: #555;">
+        Don’t have an account? <a href="{% url 'accounts:register' %}" style="color: #007bff; text-decoration: none;">Register here</a>
+    </p>
+</div>
+{% endblock %}
